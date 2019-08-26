@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-240"
+all_model_checkpoint_paths: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-120"
+all_model_checkpoint_paths: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-150"
+all_model_checkpoint_paths: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-180"
+all_model_checkpoint_paths: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-210"
+all_model_checkpoint_paths: "/home/leon/deeplearning/tensorflow/inception-v3/save_model-240"
