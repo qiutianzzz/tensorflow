@@ -64,11 +64,14 @@ def main(argv=None):
     
     trainable_variables = get_trainable_variables()
     tf.compat.v1.losses.softmax_cross_entropy(tf.one_hot(labels, N_CLASSES), logits, weights=1.0)
-    train_step = tf.compat.v1.train.RMSPropOptimizer(LEARNING_RATE).minimize(tf.compat.v1.losses.get_total_loss())
+    train_step = tf.train.RMSPropOptimizer(LEARNING_RATE).minimize(tf.losses.get_total_loss())
 
     with tf.name_scope('evaluation'):
         correct_prediction = tf.equal(tf.argmax(logits, 1), labels)
+        print("-------------------------------------------------------")
+        print("correct prediction is:", correct_prediction)
         evaluation_step = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+        print("evaluation step is:", evaluation_step)
 
     load_fn = slim.assign_from_checkpoint_fn(CKPT_FILE, get_tuned_variables(), 
         ignore_missing_vars=True)
@@ -86,9 +89,10 @@ def main(argv=None):
             start = 0
             end = BATCH
             for i in range(STEPS):
-                sess.run(train_step, feed_dict={images: training_images[start:end], labels: training_labels[start:end]})
+                sess.run(train_step, feed_dict={images: training_images[start:end], 
+                    labels: training_labels[start:end]})
 
-                if i % 60 == 0 or i + 1 == STEPS:
+                if i % 30 == 0 or i + 1 == STEPS:
                     saver.save(sess, TRAIN_FILE, global_step=i)
                     validation_accuracy = sess.run(evaluation_step, feed_dict={images: validation_iamges, 
                         labels: validation_labels })
