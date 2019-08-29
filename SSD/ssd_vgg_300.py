@@ -648,7 +648,7 @@ def ssd_losses_old(logits, localisations,
                    negative_ratio=3.,
                    alpha=1.,
                    label_smoothing=0.,
-                   device='/cpu:0',
+                   device='/gpu:0',
                    scope=None):
     """Loss functions for training the SSD 300 VGG network.
     This function defines the different loss components of the SSD, and
