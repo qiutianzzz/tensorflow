@@ -16,22 +16,4 @@ https://pjreddie.com/
 
 https://www.jianshu.com/p/8f9247bc6a9a
 
-
-static HI_S32 SAMPLE_SVP_NNIE_FillSrcData(SAMPLE_SVP_NNIE_CFG_S* pstNnieCfg,
-    SAMPLE_SVP_NNIE_PARAM_S *pstNnieParam, SAMPLE_SVP_NNIE_INPUT_DATA_INDEX_S* pstInputDataIdx)
-{
-    FILE* fp = NULL;
-    HI_U32 i =0, j = 0, n = 0;
-    HI_U32 u32Height = 0, u32Width = 0, u32Chn = 0, u32Stride = 0, u32Dim = 0;
-    HI_U32 u32VarSize = 0;
-    HI_S32 s32Ret = HI_SUCCESS;
-    HI_U8*pu8PicAddr = NULL;
-    HI_U32*pu32StepAddr = NULL;
-    HI_U32 u32SegIdx = pstInputDataIdx->u32SegIdx;
-    HI_U32 u32NodeIdx = pstInputDataIdx->u32NodeIdx;
-    HI_U32 u32TotalStepNum = 0;
-
-    /*open file*/
-    if (NULL != pstNnieCfg->pszPic)
-    {
-        fp = fopen(pstNnieCfg->pszPic,"rb");
+pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
