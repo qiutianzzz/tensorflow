@@ -20,3 +20,5 @@ https://pjreddie.com/
 https://www.jianshu.com/p/8f9247bc6a9a
 
 pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
+https://www.cnblogs.com/pprp/p/12771430.html
