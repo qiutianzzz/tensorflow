@@ -22,3 +22,26 @@ https://www.jianshu.com/p/8f9247bc6a9a
 pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 https://www.cnblogs.com/pprp/p/12771430.html
+
+
+提示：******Checking for scripts. Downloading scripts, this may take a little while
+
+等了很长时间一直不能够下载，也不能启动服务
+
+最终在网上找到了结局方法，在这分享给大家
+
+1.首先打开visdom包下的sever.py文件
+
+我的路径如下H:\Anaconda3\Lib\site-packages\visdom，根据你环境的安装位置找打sever.py。
+
+2.注释掉download_scripts()
+
+
+
+3.文件替换
+
+下载连接https://download.csdn.net/download/zl1107604962/12144503
+
+我的路径如下H:\Anaconda3\Lib\site-packages\visdom，直接替换visdom下的static文件即可，然后就可以正常启动vidom-sever了
+
+4.执行python -m visdom.server，见证奇迹的时刻到了
